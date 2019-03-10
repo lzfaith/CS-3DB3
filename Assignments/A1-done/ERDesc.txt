@@ -1,0 +1,36 @@
+Name: ZHE LIN 
+Macid: linz38
+Student Num: 001422116
+
+1. Give a brief(one sentence) description of each of your entities and relationships, and any constraints that exist.
+
+	**Person is a Superclass and a entity with attributes(name, gender, date of birth, street address, city, province, occupation), 
+	  has covering constraints with containing Driver, Maintenane personnel and Passenger and has one-many relationship with Phone.
+	
+	**Phone is entity with attributes(number,type), has many-one relationship with Person.
+	
+	**Passenger is a subclass of Person and a entity with attributes(type), has many-one(total participation) relationship with fare.
+	
+	**Fare is a entity with attributs(price), has one-many relationship with Passenger.
+	
+	**Driver is a subclass of Person and a entity with attributes(salary, serve year), one-many relationship with Infraction and one-many relationship with Bus.
+
+	**Maintenance personnel is a subclass of Person and a entity with attributes(area, level, salary, serve year), has one-many(total participation) relatioship with Bus
+
+	**Buse is a entity with attributes(busID, operation year, seat number, manufacture, revenue, fuel-type), has many-one relationship with Driver
+	  and many-one relationship with Route. It also has many-one relationship with Maintenance personnel.
+
+	**Stop is a entity with attributes(ID, name), has many-many relationship with Route and many-many relationship with Site.
+	
+	**Route is a entity with attributes(ID, Name), has many-many relationship with Stop and one-many relationship with Bus. It also has many-many(partial participation)
+	  with Site.
+
+	**Site is a entity with attributes(name, address, phoneNmb, capacity, category), has many-many(total participation) relationship with Stop and has one-many
+	  relationship with Event. It also has many-many(total participate) relationship with Route.
+	
+	**Event is a weak entity with attributes(name, date, time, particiNmb), has many-one relationship with Site.
+	
+	**Infraction is a weak entity with attributes(type, point, penalty), has many-one relaitonship with Driver.
+
+	
+	

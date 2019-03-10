@@ -1,0 +1,304 @@
+
+--+++++++++++++++++++++++++++++++++++
+--1。Identify all buses (busID, age, manufacturer) with advertising revenue greater than $9000
+--+++++++++++++++++++++++++++++++++++
+BUSID       AGE         MANUFACTURER                                                
+----------- ----------- ------------------------------------------------------------
+        331           5 Ford                                                        
+        351           1 Volkswagen                                                  
+        368           3 Chevrolet                                                   
+        375           6 Toyota                                                      
+        379           6 Toyota                                                      
+        412           3 Toyota                                                      
+        458           1 Honda                                                       
+        476           4 Honda                                                       
+        254           1 Benz                                                        
+        314           2 Toyota                                                      
+        319           5 Chevrolet                                                   
+        330           5 Chevrolet                                                   
+        370           5 Toyota                                                      
+        402           1 Benz                                                        
+        447           1 Chevrolet                                                   
+        459           1 Benz                                                        
+        480           3 Honda                                                       
+        482           3 Chevrolet                                                   
+        527           3 Volvo                                                       
+        250           5 Chevrolet                                                   
+        377           4 Volvo                                                       
+        404           3 Chevrolet                                                   
+        481           3 Benz                                                        
+        294           3 Toyota                                                      
+        383           8 Honda                                                       
+        431           3 Honda                                                       
+        451           7 Toyota                                                      
+        512           3 Benz                                                        
+
+  28 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--2.Find the number of students in the database. A student is defined as a person with a
+--student occupation or is less than 25 years old. Do not include duplicates. (Hint: If needed, you
+--may use the date() function.)
+--+++++++++++++++++++++++++++++++++++
+NUMBEROFSTUDENTS
+----------------
+              88
+
+  1 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--3.How many students took bus route #5 on May 3rd, 2017?
+--+++++++++++++++++++++++++++++++++++
+NUMBEROFSTUDENTS
+----------------
+               6
+
+  1 record(s) selected.
+
+--+++++++++++++++++++++++++++++++++++
+--4.For each bus route, find the total advertising revenue. Return the bus route number
+--and the total revenue. Order the results in descending order of total revenue.
+--+++++++++++++++++++++++++++++++++++
+ROUTEID     ADREVENUE  
+----------- -----------
+          4      121200
+          5       85900
+          1       85000
+          6       66400
+         10       65200
+          7       49900
+
+  6 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--5(a)Find all drivers who have less than 3 infractions. Return the driver’s ID, first
+--name and last name.
+--+++++++++++++++++++++++++++++++++++
+SIN         FIRSTNAME                                                    LASTNAME                                                    
+----------- ------------------------------------------------------------ ------------------------------------------------------------
+   99611229 Luisa                                                        Harnish                                                     
+   99616605 Joye                                                         Nedman                                                      
+   99625249 Harley                                                       Works                                                       
+   99641125 Stacey                                                       Lortz                                                       
+   99660420 Avery                                                        Demus                                                       
+   99664875 Reyes                                                        Mesmer                                                      
+
+  6 record(s) selected.
+
+
+--+++++++++++++++++++++++++++++++++++
+--5(b)For each driver, return the total demerit points and total fines incurred. Do not
+--include drivers with less than 2 demerit points in the result. Sort the result such that the
+--most offending drivers (in terms of demerit points, total fines) are listed first.
+--+++++++++++++++++++++++++++++++++++
+SIN         TOTALDEMERIT TOTALFINE  
+----------- ------------ -----------
+   99630025           13        1100
+   99665378           12         930
+   99611222           11         770
+   99645320           11        1100
+   99654603           11         600
+   99627956           10         530
+   99630173           10         620
+   99633690            9         400
+   99642131            9         250
+   99664103            9         250
+   99616605            8         800
+   99625249            8         600
+   99659833            8         170
+   99613410            7         180
+   99636745            7         430
+   99664875            3          50
+   99611229            2          70
+   99641125            2          60
+   99660420            2          70
+
+  19 record(s) selected.
+
+
+--+++++++++++++++++++++++++++++++++++
+--6.Determine those buses that are the unique (only) bus made by their manufacturer.
+--Return the busID and the manufacturer.
+--+++++++++++++++++++++++++++++++++++
+BUSID       MANUFACTURER                                                
+----------- ------------------------------------------------------------
+        331 Ford                                                        
+        351 Volkswagen                                                  
+
+  2 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--7(a).For each passenger type, find the total fare revenues. Return the passenger type
+--and the total (fare) revenue.
+--+++++++++++++++++++++++++++++++++++
+TYPE                 TOTALREVENUE                     
+-------------------- ---------------------------------
+CH                                              150.00
+GE                                              765.00
+SE                                               42.00
+ST                                              250.00
+
+  4 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--7(b).Extend your query in part (a) to only list passenger types with revenues greater
+--than $500.
+--+++++++++++++++++++++++++++++++++++
+TYPE                 TOTALREVENUE                     
+-------------------- ---------------------------------
+GE                                              765.00
+
+  1 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--7(c).Extend your query in part (a) to return the most profitable passenger type (in
+--terms of total fare revenue) on May 1, 2017.
+--+++++++++++++++++++++++++++++++++++
+TYPE                
+--------------------
+GE                  
+
+  1 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--8(a).Determine the most popular bus route on May 7, 2017 (according to the number
+--of passengers). Return the route ID and the number of passenger trips.
+--+++++++++++++++++++++++++++++++++++
+ROUTEID     NUMBEROFPASSENGER
+----------- -----------------
+          4                26
+
+  1 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--8(b).Which day contained the largest volume of passenger trips? Return the date and
+--the number of trips taken.
+--+++++++++++++++++++++++++++++++++++
+DATE       NUMBEROFTRIPS
+---------- -------------
+05/07/2017            93
+
+  1 record(s) selected.
+
+
+--+++++++++++++++++++++++++++++++++++
+--9).Find all persons who visited a library on either May 5, 2017 or May 6, 2017. Return
+--the person’s occupation. Do not include duplicates.
+--+++++++++++++++++++++++++++++++++++
+
+OCCUPATION                                                  
+------------------------------------------------------------
+Accounts Assistant                                          
+Aircraft Maintenance Engineer                               
+Audit Manager                                               
+Blind Fitter                                                
+Chartered                                                   
+Chicken Chaser                                              
+Councillor                                                  
+Employment                                                  
+Florist                                                     
+Hairdresser                                                 
+Hotel Worker                                                
+Investment Manager                                          
+Licensed Premises                                           
+Merchant Seaman                                             
+Military Leader                                             
+Minicab Driver                                              
+Operative                                                   
+Orthopaedic                                                 
+Prison Chaplain                                             
+Projectionist                                               
+Purchasing Assistant                                        
+Sand Blaster                                                
+Tax Analyst                                                 
+Thermal Engineer                                            
+Timber Worker                                               
+Vehicle Technician                                          
+Wood Cutter                                                 
+child                                                       
+
+  28 record(s) selected.
+
+
+
+--+++++++++++++++++++++++++++++++++++
+--10).Find the drivers who have worked with HSR for more than 5 years, with a salary
+--greater than $80000, and with less than 10 demerit points on their driving record. Return the
+--driver’s first name, last name, and ID.
+--+++++++++++++++++++++++++++++++++++
+FIRSTNAME                                                    LASTNAME                                                     ID         
+------------------------------------------------------------ ------------------------------------------------------------ -----------
+Marya                                                        Chhour                                                          99613410
+Joye                                                         Nedman                                                          99616605
+Kaycee                                                       Alaibilla                                                       99633690
+Avery                                                        Demus                                                           99660420
+Reyes                                                        Mesmer                                                          99664875
+
+  5 record(s) selected.
+
+
+--+++++++++++++++++++++++++++++++++++
+--11).Find all students who attended the ”Marauders Tennis” match and arrived via a bus
+--on route 4. Return the student’s first name, last name, and their gender.
+--+++++++++++++++++++++++++++++++++++
+FIRSTNAME                                                    LASTNAME                                                     SEX                                                         
+------------------------------------------------------------ ------------------------------------------------------------ ------------------------------------------------------------
+Valentin                                                     Billa                                                        M                                                           
+Gianna                                                       Branin                                                       M                                                           
+Hortencia                                                    Bresser                                                      F                                                           
+Ilona                                                        Dudash                                                       F                                                           
+Willard                                                      Lablanc                                                      F                                                           
+Chandra                                                      Lagos                                                        M                                                           
+Huey                                                         Marcille                                                     F                                                           
+Crissy                                                       Pacholec                                                     M                                                           
+Danilo                                                       Pride                                                        M                                                           
+Lauryn                                                       Randol                                                       F                                                           
+Leanna                                                       Tijerina                                                     M                                                           
+Apolonia                                                     Warne                                                        M                                                           
+
+  12 record(s) selected.
+
+
+--+++++++++++++++++++++++++++++++++++
+--12.Assuming that the bus schedule has not changed since May 2017. Suppose you would
+--like to attend the ”Marauders Basketball” game (an event). The game starts at 5pm, and you’d
+--like to arrive at the site between 4:20pm and 4:50pm, which routes can you take? Use May 1,
+--2017 as a reference date for the bus schedule information. List the route ID, the bus stop name
+--(where you should get off the bus), and the scheduled arrival time.
+--+++++++++++++++++++++++++++++++++++
+ROUTEID     SNAME                                                        ARRIVALTIME
+----------- ------------------------------------------------------------ -----------
+          4 QUEEN at CANADA                                              16:36:00   
+          4 CANNON at OTTAWA                                             16:38:00   
+          4 QUEEN at CHARLTON                                            16:26:00   
+          4 QUEEN at CHARLTON                                            16:48:00   
+          4 QUEEN at ABERDEEN                                            16:46:00   
+          4 KING at SHERMAN                                              16:20:00   
+          4 KING at SHERMAN                                              16:32:00   
+          4 KING at SANFORD                                              16:42:00   
+          4 KING at WALNUT                                               16:24:00   
+          4 JAMES at GUISE                                               16:30:00   
+          4 UPPER OTTAWA at NINTH                                        16:28:00   
+          4 PLEASANT at EDENBRIDGE                                       16:22:00   
+          4 PLEASANT at EDENBRIDGE                                       16:44:00   
+          4 PLEASANT at EDENBRIDGE                                       16:50:00   
+          4 HUNTER at BAY                                                16:40:00   
+          4 CANNON at OTTAWA                                             16:34:00   
+
+  16 record(s) selected.

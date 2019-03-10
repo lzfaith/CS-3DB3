@@ -1,0 +1,63 @@
+Name: ZHE LIN 
+Macid: linz38
+Student Num: 001422116
+
+1. State the two properties of data independence provided in DBMS. Why are they important? Given an example situation of when data independence is usefel.
+
+Answer:
+	Conceptual independence and Physical independence are two properties of data independences provided in DBMS. 
+
+	Conceptual independence define logical struture,  it is important as a part of data independence in DBMS, it can make changes such as adding, deleting, 
+	etc. When it makes change, it doesn't need to change the design of database and not affect the physical schema. 
+	
+	Physical independence describes the files and indexes used. It means that application and the data stored in the database on the dist, which they are 
+	independent, respectively. DBMS manage the data that is stored on the disk. When the physical data storage changes, the application does not change. 
+
+	As we know, a database system contains a lot of data and it needs to change over the time to meet the requirements of the users. If they are dependent, 
+	it will become a complex work and it is hard for us to modify. Therefore Conceptual data independence and physical data independence are important for DBMS.
+
+
+	Ex: if we want to change or upgrade the storage device, it will not affect the logical schema. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Consider the relations in a banking database given by the schemas below.
+
+Answer:
+	a)Identify a primary key for each relation. For each key, briefly state the assumptions or conditions under which each key would be valid.
+
+		BRANCH: branchName
+			branchName is a primary key. We know that different branches, they can have the same sales and manager. Moreover they also 
+			could be located in same city and same address. Thus the branchName will be unique to identify a BRANCH.
+		
+		CUSTOMER: cID
+			In this relation, the bank has a lot of customers. They may have the same firstName, lastName, birthDate and totalAssets,
+			customers also can fill the same phoneNum for registing. As a family, they can have the same home address. In a word, cID is the 
+			primary key for customer, it likes a student id. There will not be two same student id in same school. 
+		
+		LOAN: loanNum
+			The branch can have many loans, the different loans may have the same amount or duration or interest. Therefore these keys could not be identify as a primary
+			key. The loanNum is unique. 
+		
+		BORROWER: cID, loanNum
+			BORROWER associates a customer to a loan. However a customer can have many loans in different branches. In the other situation, there would be many joint holders
+			so that they have the same loan. Therefore, in these two situations, either of them cannot sign as a primary key. The two of them need to form a primary key 
+			together to identify customer's loan.
+		
+		ACCOUNT: acctNum
+			It is possible for different branches having the same account number. Practically, it cannot have the same account number for different branches.
+			If they have the same account, it will make bank having overlapping debt. Consequently, acctNum is unique. It can be as a primary key.
+		
+		DEPOSITER: cID, acctNum
+			DEPOSITER associates a customer and a bank account. In previous relation, We have talked about one customer cannot hold same account twice. However a bank account 
+			can be a joint bank account, so there many customers use the same account. Moreover a customer also can have hold differnt accounts under his/her name. Thus either 
+			of them cannot be as a primary key.  In conclude, both of them should be as a primary key in this relation.
+		
+	b)Given your choice of primary keys in (a), define four referential integrity constraints. State the appropriate primary to foreign key references.
+		
+		"cID" is a primary key in CUSTOMER, it is a foreign key referring to "cID" for BORROWER.
+		"cID" is a primary key in CUSTOMER, it is a foreign key referring to "cID for DEPOSITER.
+		"branchName" is a primary key in LOAN, it is a foreign key referring to "branchName" in BORROWER.
+		"acctNum" is a primary key in ACCOUNT, it is a foreign key referring to "accountNum" in DEPOSITER.
+		
+		
